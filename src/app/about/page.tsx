@@ -10,22 +10,25 @@ export const metadata = {
 };
 
 const techStack = [
-  { name: "Kubernetes", category: "Infrastructure" },
-  { name: "Docker", category: "Infrastructure" },
-  { name: "Terraform", category: "Infrastructure" },
   { name: "TypeScript", category: "Languages" },
   { name: "Node.js", category: "Languages" },
   { name: "Go", category: "Languages" },
-  { name: "Python", category: "Languages" },
+  { name: "React", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
+  { name: "NestJS", category: "Backend" },
+  { name: "Prisma", category: "Backend" },
+  { name: "PostgreSQL", category: "Data" },
+  { name: "Redis", category: "Data" },
+  { name: "Kubernetes", category: "Infrastructure" },
+  { name: "Docker", category: "Infrastructure" },
+  { name: "Terraform", category: "Infrastructure" },
   { name: "Azure", category: "Cloud" },
   { name: "GCP", category: "Cloud" },
   { name: "AWS", category: "Cloud" },
   { name: "OpenAI", category: "AI" },
   { name: "LLMs", category: "AI" },
   { name: "FluxCD", category: "GitOps" },
-  { name: "ArgoCD", category: "GitOps" },
   { name: "Prometheus", category: "Observability" },
-  { name: "Grafana", category: "Observability" },
 ];
 
 const timeline = [
