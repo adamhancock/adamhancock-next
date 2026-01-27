@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         <Separator className="mb-8" />
 
-        <div className="prose prose-neutral dark:prose-invert max-w-none prose-pre:p-0 prose-pre:bg-transparent">
+        <div className="prose prose-neutral dark:prose-invert max-w-none prose-pre:p-0 prose-pre:bg-transparent prose-lg">
           {post.content}
         </div>
       </article>
