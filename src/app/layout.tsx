@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Adam Hancock | Platform Lead",
+    default: "Adam Hancock | Founding Engineer",
     template: "%s | Adam Hancock",
   },
   description: "Developer with a passion for DevOps, Cloud Computing and Automation. Building scalable infrastructure and empowering teams to ship faster.",
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://adamhancock.co.uk",
     siteName: "Adam Hancock",
-    title: "Adam Hancock | Platform Lead",
+    title: "Adam Hancock | Founding Engineer",
     description: "Developer with a passion for DevOps, Cloud Computing and Automation.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Adam Hancock - Platform Lead",
+        alt: "Adam Hancock - Founding Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adam Hancock | Platform Lead",
+    title: "Adam Hancock | Founding Engineer",
     description: "Developer with a passion for DevOps, Cloud Computing and Automation.",
     creator: "@adamhancock",
     images: ["/og-image.png"],

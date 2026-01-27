@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export const metadata = {
   title: "About | Adam Hancock",
-  description: "Platform Lead with a passion for DevOps, Cloud Computing and Automation.",
+  description: "Founding Engineer with a passion for DevOps, Cloud Computing and Automation.",
 };
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <div className="space-y-4">
         <h1 className="text-3xl font-bold tracking-tight">About Me</h1>
         <p className="text-xl text-muted-foreground">
-          Platform Lead with a passion for DevOps, Cloud Computing and Automation.
+          Founding Engineer with a passion for DevOps, Cloud Computing and Automation.
         </p>
       </div>
 
