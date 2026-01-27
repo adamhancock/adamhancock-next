@@ -50,8 +50,8 @@ export default async function Home() {
           <BlurFade delay={0.4}>
             <div className="flex gap-4 flex-wrap pt-4">
               <Link href="/blog">
-                <ShimmerButton className="shadow-2xl">
-                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-base">
+                <ShimmerButton className="shadow-2xl h-11">
+                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white">
                     Read the Blog
                   </span>
                 </ShimmerButton>
