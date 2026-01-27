@@ -76,28 +76,28 @@ export default async function Home() {
         <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {recentPosts.map((post, index) => (
             <BlurFade key={post.slug} delay={0.6 + index * 0.1}>
-              <Card className="flex flex-col h-full hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex gap-2 mb-2 flex-wrap">
-                    {post.tags?.slice(0, 2).map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <CardTitle className="line-clamp-2">
-                    <Link href={`/blog/${post.slug}`} className="hover:underline">
+              <Link href={`/blog/${post.slug}`} className="block">
+                <Card className="flex flex-col h-full hover:shadow-lg transition-all hover:scale-[1.02] cursor-pointer">
+                  <CardHeader>
+                    <div className="flex gap-2 mb-2 flex-wrap">
+                      {post.tags?.slice(0, 2).map((tag) => (
+                        <Badge key={tag} variant="secondary">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <CardTitle className="line-clamp-2">
                       {post.title}
-                    </Link>
-                  </CardTitle>
-                  <CardDescription>{post.date}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <p className="text-muted-foreground line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                </CardContent>
-              </Card>
+                    </CardTitle>
+                    <CardDescription>{post.date}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <p className="text-muted-foreground line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
             </BlurFade>
           ))}
         </div>
