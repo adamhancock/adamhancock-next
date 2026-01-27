@@ -3,8 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
-import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { DotPattern } from "@/components/ui/dot-pattern";
+import { ArrowRight } from "lucide-react";
 import { getBlogPosts } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 
@@ -15,48 +15,56 @@ export default async function Home() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="space-y-4 md:space-y-6 py-6 md:py-12">
-        <BlurFade delay={0.1}>
-          <AnimatedGradientText className="mb-4">
-            🚀 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
-            <span className={cn(
-              "inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent"
-            )}>
-              Founding Engineer
-            </span>
-            <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-          </AnimatedGradientText>
-        </BlurFade>
+      <section className="relative min-h-[60vh] flex items-center -mx-4 md:-mx-8 px-4 md:px-8 -mt-4 md:-mt-8 overflow-hidden">
+        <DotPattern
+          className={cn(
+            "absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
+            "opacity-50"
+          )}
+        />
+        <div className="relative z-10 space-y-6 py-12 md:py-20">
+          <BlurFade delay={0.1}>
+            <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium bg-background/80 backdrop-blur-sm">
+              <span className="mr-2">🚀</span>
+              <span className="bg-gradient-to-r from-orange-400 via-purple-500 to-orange-400 bg-clip-text text-transparent animate-pulse">
+                Founding Engineer @ Assurix
+              </span>
+            </div>
+          </BlurFade>
 
-        <BlurFade delay={0.2}>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            Hey, I'm Adam 👋
-          </h1>
-        </BlurFade>
+          <BlurFade delay={0.2}>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight max-w-4xl">
+              Hey, I'm Adam.
+              <br />
+              <span className="text-muted-foreground">I build products with AI.</span>
+            </h1>
+          </BlurFade>
 
-        <BlurFade delay={0.3}>
-          <p className="text-xl text-muted-foreground max-w-2xl">
-            I build products with AI.
-          </p>
-        </BlurFade>
+          <BlurFade delay={0.3}>
+            <p className="text-xl text-muted-foreground max-w-2xl">
+              Founding Engineer crafting the future of cyber assurance. 
+              Writing about DevOps, Kubernetes, and AI.
+            </p>
+          </BlurFade>
 
-        <BlurFade delay={0.4}>
-          <div className="flex gap-4 flex-wrap">
-            <Link href="/blog">
-              <ShimmerButton className="shadow-2xl">
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  Read the Blog
-                </span>
-              </ShimmerButton>
-            </Link>
-            <Link 
-              href="/about"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
-            >
-              About Me
-            </Link>
-          </div>
-        </BlurFade>
+          <BlurFade delay={0.4}>
+            <div className="flex gap-4 flex-wrap pt-4">
+              <Link href="/blog">
+                <ShimmerButton className="shadow-2xl">
+                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-base">
+                    Read the Blog
+                  </span>
+                </ShimmerButton>
+              </Link>
+              <Link 
+                href="/about"
+                className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors border border-input bg-background/80 backdrop-blur-sm shadow-sm hover:bg-accent hover:text-accent-foreground h-11 px-6"
+              >
+                About Me <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </BlurFade>
+        </div>
       </section>
 
       {/* Recent Posts */}
