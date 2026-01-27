@@ -67,7 +67,7 @@ export default function AboutPage() {
       <BlurFade delay={0.2}>
         <div className="space-y-4 text-lg leading-relaxed">
           <p>
-            I'm a developer with a passion for building scalable infrastructure and 
+            I'm an engineer with a passion for building scalable infrastructure and 
             empowering teams to ship faster. I believe great developer experience 
             leads to great products.
           </p>
