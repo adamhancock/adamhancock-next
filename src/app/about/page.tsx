@@ -16,9 +16,12 @@ const techStack = [
   { name: "TypeScript", category: "Languages" },
   { name: "Node.js", category: "Languages" },
   { name: "Go", category: "Languages" },
+  { name: "Python", category: "Languages" },
   { name: "Azure", category: "Cloud" },
   { name: "GCP", category: "Cloud" },
   { name: "AWS", category: "Cloud" },
+  { name: "OpenAI", category: "AI" },
+  { name: "LLMs", category: "AI" },
   { name: "FluxCD", category: "GitOps" },
   { name: "ArgoCD", category: "GitOps" },
   { name: "Prometheus", category: "Observability" },
@@ -67,8 +70,8 @@ export default function AboutPage() {
       <BlurFade delay={0.2}>
         <div className="space-y-4 text-lg leading-relaxed">
           <p>
-            I build products. Scalable infrastructure, great developer experience, 
-            and empowering teams to ship faster — that's what I care about.
+            I build products. Scalable infrastructure, AI, and great developer 
+            experience — that's what I care about.
           </p>
           <p>
             By day, I'm architecting cloud-native platforms and automating everything 
