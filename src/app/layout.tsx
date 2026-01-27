@@ -73,7 +73,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background`}>
         <Header />
-        <main className="container py-8 pb-24">
+        <main className="container px-4 md:px-8 py-4 md:py-8 pb-8 md:pb-24">
           {children}
         </main>
         <SocialDock />

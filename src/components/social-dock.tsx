@@ -28,7 +28,7 @@ const socialLinks = [
 
 export function SocialDock() {
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+    <div className="hidden md:block fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
       <Dock iconMagnification={60} iconDistance={100}>
         {socialLinks.map((link) => (
           <DockIcon key={link.label}>

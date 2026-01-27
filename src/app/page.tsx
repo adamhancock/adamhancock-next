@@ -15,7 +15,7 @@ export default async function Home() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="space-y-6 py-12">
+      <section className="space-y-4 md:space-y-6 py-6 md:py-12">
         <BlurFade delay={0.1}>
           <AnimatedGradientText className="mb-4">
             🚀 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
@@ -74,7 +74,7 @@ export default async function Home() {
           </div>
         </BlurFade>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {recentPosts.map((post, index) => (
             <BlurFade key={post.slug} delay={0.6 + index * 0.1}>
               <Card className="flex flex-col h-full hover:shadow-lg transition-shadow">
