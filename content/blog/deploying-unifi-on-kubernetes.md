@@ -58,5 +58,5 @@ If you're running traefik as your ingress controller, you will need to allow tra
 
 ```
 
-Github: <https://github.com/adamhancock/UniFi-on-k8s>  
-Docker Image: <https://hub.docker.com/r/linuxserver/unifi-controller>
+Github: [https://github.com/adamhancock/UniFi-on-k8s](https://github.com/adamhancock/UniFi-on-k8s)  
+Docker Image: [https://hub.docker.com/r/linuxserver/unifi-controller](https://hub.docker.com/r/linuxserver/unifi-controller)

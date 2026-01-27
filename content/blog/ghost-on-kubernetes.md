@@ -25,7 +25,7 @@ This blog post will demonstrate how to achieve setting up a stateless container 
 
 You'll need the following YAML to create the deployment, service, ingress and configmap in K8s.
 
-To get started, download the below Gist: <https://gist.github.com/adamhancock/9f55709c3c9ef002eaefb04eb7b6b840>
+To get started, download the below Gist: [https://gist.github.com/adamhancock/9f55709c3c9ef002eaefb04eb7b6b840](https://gist.github.com/adamhancock/9f55709c3c9ef002eaefb04eb7b6b840)
 
 In your editor, you will need to edit the configmap YAML with your database credentials and CDN address. 
 
@@ -53,7 +53,7 @@ To add your theme to ghost, you will need to create your own container image and
 
 Upload the theme (zipped) normally through the ghost admin portal 
 
-Fork the repository: <https://github.com/adamhancock/ghost-azure-storage>
+Fork the repository: [https://github.com/adamhancock/ghost-azure-storage](https://github.com/adamhancock/ghost-azure-storage)
 
 Update the _entrypoint-wrapper.sh_ script to copy your (uncompressed) theme into _/var/lib/ghost/_content/themes/. I'm using git to copy it in but you can also use the _COPY command inside the Dockerfile._ 
 

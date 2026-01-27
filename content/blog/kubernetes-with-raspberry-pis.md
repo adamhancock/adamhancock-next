@@ -9,7 +9,7 @@ excerpt: An overview into the Kubernetes cluster I created at home.
 
 I recently built a Kubernetes cluster on four Raspberry Pi's. My requirement was to be able to run containers with persistent storage for my home network. I generally recommend that you choose to use a [Kubernetes cloud provider](https://m.do.co/c/1fc1cc76cb30) but building a cluster from scratch at home is a really great learning experience. Unless the image author supports it, there are [some extra steps](https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/getting-started-with-docker-for-arm-on-linux) with running containers on ARM processors however it's becoming more widely supported. I based my setup of this [guide.](https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9) 
 
-<img src="https://cdn.adamhancock.co.uk/blog/2020/8/61142_image-1.png" width="80%">
+![Image](https://cdn.adamhancock.co.uk/blog/2020/8/61142_image-1.png)
 
 I used four of the Raspberry Pi 4's with 4GB of Memory. The master Pi has a 1TB SSD plugged in via USB 3.0 enclosure. [I'm using a stackable case I found on amazon to house them. ](https://www.amazon.co.uk/gp/product/B07BGWNWWR) As this cluster runs at home I needed it to run quietly. You can run the Pi's without Fans but the CPU will start to heavily throttle as temperatures rise. I'm using the [SHIM fan from Pimoroni](https://www.amazon.co.uk/gp/product/B07TTTCN8H) to keep everything running cool, the software provided with the Fan allows you to set thresholds for when the fans are operated. 
 
@@ -25,7 +25,7 @@ worker3.rpi.a9k.io   Ready    <none>   105d   v1.17.2
 
 ```
 
-<img src="https://cdn.adamhancock.co.uk/blog/2020/8/61143_Raspberry-PI.png" width="80%">
+![Image](https://cdn.adamhancock.co.uk/blog/2020/8/61143_Raspberry-PI.png)
 
 
 ### Base Setup

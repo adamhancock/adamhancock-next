@@ -9,7 +9,7 @@ excerpt: Docker Container to backup MySQL databases to Azure Blob Storage
 ---
 # Backing up a MySQL container to Azure ☁
 
-<https://hub.docker.com/r/adamhancock/mysql-backup-to-azure>
+[https://hub.docker.com/r/adamhancock/mysql-backup-to-azure](https://hub.docker.com/r/adamhancock/mysql-backup-to-azure)
 
 [MySQL-backup-to-azure](https://github.com/adamhancock/mysql-backup-to-azure) is a docker container that will connect to your specified MySQL server, create a database dump of all your databases and write the contents to Azure Blob Storage.
 

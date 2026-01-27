@@ -17,7 +17,7 @@ This guide assumes you already have K8s with persistent storage or k3s setup.
 
 ### Deployment YAML
 
-Download the following YAML and unzip: <https://gist.github.com/adamhancock/a8447dcf479679bfb467ca9d5fbb64ad>
+Download the following YAML and unzip: [https://gist.github.com/adamhancock/a8447dcf479679bfb467ca9d5fbb64ad](https://gist.github.com/adamhancock/a8447dcf479679bfb467ca9d5fbb64ad)
 
 Update ingress.yml and replace yourdomain.tld with your domain. Change into the extracted directory and run
 
