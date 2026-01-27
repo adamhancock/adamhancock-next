@@ -47,7 +47,7 @@ You'll get a domain like `clawdbot.mailhooks.email` where you can receive emails
 Mailhooks provides an official TypeScript SDK that handles connection management, reconnection, and type safety:
 
 ```bash
-npm install @mailhooks/sdk eventsource
+npm install @mailhooks/sdk
 ```
 
 ### 3. Get Your API Key
@@ -63,9 +63,6 @@ echo 'MAILHOOKS_API_KEY=mh_your_key_here' >> ~/clawd/.secrets/mailhooks.env
 Using the SDK, listening for emails is just a few lines:
 
 ```javascript
-import EventSource from 'eventsource';
-global.EventSource = EventSource;
-
 import { Mailhooks } from '@mailhooks/sdk';
 
 const mailhooks = new Mailhooks({ 
