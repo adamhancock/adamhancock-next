@@ -36,8 +36,7 @@ export default async function Home() {
 
         <BlurFade delay={0.3}>
           <p className="text-xl text-muted-foreground max-w-2xl">
-            Developer with a passion for DevOps, Cloud Computing and Automation.
-            Building scalable infrastructure and empowering teams to ship faster.
+            I build products. Scalable infrastructure, AI, and great developer experience.
           </p>
         </BlurFade>
 
