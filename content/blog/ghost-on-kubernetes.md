@@ -57,7 +57,7 @@ Fork the repository: [https://github.com/adamhancock/ghost-azure-storage](https:
 
 Update the _entrypoint-wrapper.sh_ script to copy your (uncompressed) theme into _/var/lib/ghost/_content/themes/. I'm using git to copy it in but you can also use the _COPY command inside the Dockerfile._ 
 
-If you do use the Dockerfile method, you will need to copy it to an interim location and copy to the themes directory using the entrypoint script. The themes/content directory doesn't exist at the time the Dockerfile is executes. 
+If you do use the Dockerfile method, you will need to copy it to an interim location and copy to the themes directory using the entrypoint script. The themes/content directory doesn't exist at the time the Dockerfile executes. 
 
 Build and push your new Docker image with 
 

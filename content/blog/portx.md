@@ -3,7 +3,7 @@ title: "PortX \U0001F680 - Open port testing CLI"
 date: '2020-04-05'
 tags:
   - Software
-excerpt: Port testing
+excerpt: PortX provides an easy way to test for open TCP ports from the command line.
 ---
 # PortX 🚀 - Open port testing CLI
 
@@ -11,7 +11,7 @@ PortX provides an easy way to test for open TCP ports from the command line. It'
 
 ### Install
 
-Download the latest binary for your operating system from [https://github.com/adamhancock/portx/release](https://github.com/adamhancock/portx/releases)s
+Download the latest binary for your operating system from [GitHub Releases](https://github.com/adamhancock/portx/releases)
 
 MacOS and Linux - chmod +x the portx executable and mv it to /usr/local/bin/portx
 

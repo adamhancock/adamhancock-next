@@ -1,13 +1,13 @@
 ---
-title: Running Kubernetes with Raspberry Pi's
+title: Running Kubernetes with Raspberry Pis
 date: '2020-05-03'
 tags:
   - Kubernetes
 excerpt: An overview into the Kubernetes cluster I created at home.
 ---
-# Running Kubernetes with Raspberry Pi's
+# Running Kubernetes with Raspberry Pis
 
-I recently built a Kubernetes cluster on four Raspberry Pi's. My requirement was to be able to run containers with persistent storage for my home network. I generally recommend that you choose to use a [Kubernetes cloud provider](https://m.do.co/c/1fc1cc76cb30) but building a cluster from scratch at home is a really great learning experience. Unless the image author supports it, there are [some extra steps](https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/getting-started-with-docker-for-arm-on-linux) with running containers on ARM processors however it's becoming more widely supported. I based my setup of this [guide.](https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9) 
+I recently built a Kubernetes cluster on four Raspberry Pis. My requirement was to be able to run containers with persistent storage for my home network. I generally recommend that you choose to use a [Kubernetes cloud provider](https://m.do.co/c/1fc1cc76cb30) but building a cluster from scratch at home is a really great learning experience. Unless the image author supports it, there are [some extra steps](https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/getting-started-with-docker-for-arm-on-linux) with running containers on ARM processors however it's becoming more widely supported. I based my setup of this [guide.](https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9) 
 
 ![Image](https://cdn.adamhancock.co.uk/blog/2020/8/61142_image-1.png)
 
@@ -38,7 +38,7 @@ I'm running Raspbian Buster on all four Pi's. Kubernetes was installed via kubea
 
 **MetalLB** \- Out of the box K8s doesn't offer a network implementation of a load balancer, you're required to either bring your own or it's a provided to you by your cloud provider. MetalLB looks to solve this. It isn't recommended for production clusters as it's still in Beta but I've had no issues and been very impressed with it so far. I'm using MetalLB in Layer 2 mode, there's around 10 seconds of downtime for the ARP cache to timeout if the lead node fails. When installing you specify the IP range that MetalLB can use to provision load balancers.
 
-**Cert-Manager -** I'm using [cert-manager](https://github.com/jetstack/cert-manager) by Jetstack to automatically generate and renew Letsencrypt TLS certficates for NGINX. Cert-manager is setup to perform DNS validation with Cloudflare. 
+**Cert-Manager -** I'm using [cert-manager](https://github.com/jetstack/cert-manager) by Jetstack to automatically generate and renew Letsencrypt TLS certificates for NGINX. Cert-manager is setup to perform DNS validation with Cloudflare. 
 
 **Samba** \- I'm running this [Samba container](https://github.com/dperson/samba). I had an issue with using Samba over the top of NFS with MacOS extended attributes. I had to disable extended attribute support in Samba to get writing to the share from MacOS working. [Feel free to use my container. ](https://hub.docker.com/repository/docker/adamhancock/samba-arm/general)
 

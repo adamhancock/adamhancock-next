@@ -7,7 +7,7 @@ excerpt: Running a small K3s cluster on Digital Ocean
 ---
 # K3s on a Digital Ocean
 
-K3s is a lightweight distribution of Kubernetes created Rancher Labs. It can be run on a single host (or multiple). K3s is more opinionated than upstream Kubernetes, that isn't necessarily a bad thing.
+K3s is a lightweight distribution of Kubernetes created by Rancher Labs. It can be run on a single host (or multiple). K3s is more opinionated than upstream Kubernetes, that isn't necessarily a bad thing.
 
 The standard K3s batteries included stack is: 
 
@@ -15,17 +15,16 @@ The standard K3s batteries included stack is:
 * Container Networking - Flannel
 * Persistent Storage - Local Path Provisioner - This creates persistent volumes under a local path on your system.
 
-I setup K3s on [Digital Ocean](https://m.do.co/c/1fc1cc76cb30) to run this Blog, Ubiquti's UniFi Controller and a few other personal projects in containers. My goal was to be able to create a container platform while keeping costs to a minimum. Digital Ocean do offer a Managed Kubernetes solution but you have to pay for Persistent Volumes and Load Balancer. I'm running a single droplet with 2 vCPU's, 4GB of memory and 80GB storage. 
+I setup K3s on [Digital Ocean](https://m.do.co/c/1fc1cc76cb30) to run this Blog, Ubiquti's UniFi Controller and a few other personal projects in containers. My goal was to be able to create a container platform while keeping costs to a minimum. Digital Ocean does offer a Managed Kubernetes solution but you have to pay for Persistent Volumes and Load Balancer. I'm running a single droplet with 2 vCPUs, 4GB of memory and 80GB storage. 
 
 ### Install K3s
 
 Unlike upstream K8s, K3s is very simple to setup. Head over to [www.k3s.io](https://www.k3s.io) and run the install instructions as root on your digital ocean droplet:
 
-```
-  curl -sfL https://get.k3s.io | sh -
-  # Check for Ready node, 
-  takes maybe 30 seconds
-  k3s kubectl get node
+```bash
+curl -sfL https://get.k3s.io | sh -
+# Check for Ready node, takes maybe 30 seconds
+k3s kubectl get node
 ```
 
 Once K3s has finished installing you'll want to switch to using kubectl instead of the k3s client. I manage other clusters from kubectl and switch between them using [kubectx](https://github.com/ahmetb/kubectx).
