@@ -1,7 +1,9 @@
+/// <reference types="@cloudflare/workers-types" />
+
 // Cloudflare Pages Function to proxy OpenPanel ingest requests
 // Routes: /ingest/* → ingest.mailhooks.dev/*
 
-export async function onRequest(context) {
+export const onRequest: PagesFunction = async (context) => {
   const url = new URL(context.request.url);
   
   // Rewrite to OpenPanel ingest endpoint
@@ -26,4 +28,4 @@ export async function onRequest(context) {
   newResponse.headers.set('Access-Control-Allow-Origin', '*');
   
   return newResponse;
-}
+};
