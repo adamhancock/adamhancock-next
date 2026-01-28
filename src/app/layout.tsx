@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
-import { SocialDock } from "@/components/social-dock";
 import { OpenPanelComponent } from "@openpanel/nextjs";
 
 const geistSans = Geist({
@@ -83,7 +82,6 @@ export default function RootLayout({
         <main className="container px-4 md:px-8 py-4 md:py-8 pb-8 md:pb-24">
           {children}
         </main>
-        <SocialDock />
       </body>
     </html>
   );
