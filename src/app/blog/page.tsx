@@ -12,7 +12,7 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 max-w-3xl mx-auto">
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Blog</h1>
         <p className="text-muted-foreground">
