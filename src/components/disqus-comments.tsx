@@ -33,21 +33,10 @@ export function DisqusComments({ slug, title }: DisqusCommentsProps) {
   return (
     <div className="mt-12">
       <h2 className="text-2xl font-bold mb-6">Comments</h2>
-      {/* Wrapper with explicit colors to prevent Disqus from reading oklch() values */}
-      <div 
-        style={{ 
-          backgroundColor: '#ffffff',
-          color: '#000000',
-          padding: '1rem',
-          borderRadius: '0.5rem',
-        }}
-        className="dark:!bg-neutral-900 dark:!text-white"
-      >
-        <DiscussionEmbed 
-          shortname="adamhancockcouk" 
-          config={disqusConfig}
-        />
-      </div>
+      <DiscussionEmbed 
+        shortname="adamhancockcouk" 
+        config={disqusConfig}
+      />
     </div>
   );
 }
