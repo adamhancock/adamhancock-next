@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { Github, Linkedin, Mail, Twitter, MapPin, Building2, Calendar } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Building2, Calendar } from "lucide-react";
 
 export const metadata = {
   title: "About",
@@ -194,11 +194,6 @@ export default function AboutPage() {
             <Button variant="outline" asChild>
               <a href="https://linkedin.com/in/adam-hancock" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="https://twitter.com/adamhancock" target="_blank" rel="noopener noreferrer">
-                <Twitter className="mr-2 h-4 w-4" /> Twitter
               </a>
             </Button>
           </div>
