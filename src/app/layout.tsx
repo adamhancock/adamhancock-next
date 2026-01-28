@@ -75,7 +75,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background`}>
         <OpenPanelComponent
           clientId="9952441b-de50-4420-b9a6-0c62f04eba9d"
-          apiUrl="https://ingest.adamhancock.co.uk/api"
+          apiUrl="https://adamhancock.co.uk/ingest"
           trackScreenViews={true}
           trackOutgoingLinks={true}
         />
