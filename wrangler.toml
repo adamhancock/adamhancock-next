@@ -1,5 +1,7 @@
 name = "adamhancock-next"
+main = "_worker.ts"
 compatibility_date = "2026-01-27"
 
 [assets]
 directory = "./out"
+binding = "ASSETS"
