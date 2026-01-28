@@ -35,14 +35,20 @@ const timeline = [
   {
     role: "Founding Engineer",
     company: "Assurix",
-    period: "2024 - Present",
-    description: "Building a cyber assurance platform from the ground up. Leading infrastructure, platform engineering, and DevOps practices.",
+    period: "Jul 2025 - Present",
+    description: "Building the core platform that enables Managed Service Providers (MSPs) to prove they are secure, mature, and resilient.",
   },
   {
     role: "Platform Lead",
-    company: "Previous Role",
-    period: "2021 - 2024",
+    company: "Capgemini",
+    period: "Nov 2022 - Jul 2025",
     description: "Led platform engineering initiatives, built internal developer platforms, and scaled Kubernetes infrastructure.",
+  },
+  {
+    role: "Platform Engineer",
+    company: "Capgemini",
+    period: "Jul 2022 - Nov 2022",
+    description: "Platform engineering and DevOps practices for enterprise clients.",
   },
 ];
 
