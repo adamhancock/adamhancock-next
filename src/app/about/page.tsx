@@ -44,12 +44,6 @@ const timeline = [
     period: "Nov 2022 - Jul 2025",
     description: "Led platform engineering initiatives, built internal developer platforms, and scaled Kubernetes infrastructure.",
   },
-  {
-    role: "Platform Engineer",
-    company: "Capgemini",
-    period: "Jul 2022 - Nov 2022",
-    description: "Platform engineering and DevOps practices for enterprise clients.",
-  },
 ];
 
 export default function AboutPage() {
