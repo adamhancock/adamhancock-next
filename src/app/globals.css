@@ -173,6 +173,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  .container {
+    @apply max-w-4xl mx-auto;
+  }
 }
 
 /* Syntax highlighting for rehype-pretty-code */
