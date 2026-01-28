@@ -16,6 +16,12 @@ export default {
         body: request.body,
       });
       
+      // Forward the real client IP to OpenPanel for geolocation
+      const clientIP = request.headers.get('CF-Connecting-IP');
+      if (clientIP) {
+        proxyRequest.headers.set('X-Forwarded-For', clientIP);
+        proxyRequest.headers.set('X-Real-IP', clientIP);
+      }
       proxyRequest.headers.set('Host', 'ingest.mailhooks.dev');
       
       const response = await fetch(proxyRequest);
