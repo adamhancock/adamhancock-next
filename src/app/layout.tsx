@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { SocialDock } from "@/components/social-dock";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,6 +73,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background`}>
+        <OpenPanelComponent
+          clientId={process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID!}
+          trackScreenViews={true}
+          trackOutgoingLinks={true}
+        />
         <Header />
         <main className="container px-4 md:px-8 py-4 md:py-8 pb-8 md:pb-24">
           {children}
