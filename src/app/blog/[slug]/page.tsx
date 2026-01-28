@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { getBlogPostWithMDX, getBlogPosts } from "@/lib/blog";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { DisqusComments } from "@/components/disqus-comments";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -108,6 +109,10 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="prose prose-neutral dark:prose-invert max-w-none prose-pre:p-0 prose-pre:bg-transparent prose-lg">
           {post.content}
         </div>
+
+        <Separator className="my-12" />
+
+        <DisqusComments slug={slug} title={post.title} />
       </article>
     </>
   );
