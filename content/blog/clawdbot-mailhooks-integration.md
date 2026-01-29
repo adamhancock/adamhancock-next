@@ -11,6 +11,18 @@ But there's one thing Clawdbot can't do out of the box: **receive emails**.
 
 Sure, you can have it *read* your Gmail inbox using the `gog` CLI. But that requires polling — constantly checking "any new emails?" — which burns API calls and adds latency. What if you want your AI assistant to be **notified instantly** when an important email arrives?
 
+## What is Mailhooks?
+
+[Mailhooks](https://mailhooks.dev) is a developer-focused email API that lets you receive inbound emails without running your own mail server. Instead of dealing with SMTP, MX records, and MIME parsing, you get a simple API endpoint that delivers emails to your app via webhooks or real-time Server-Sent Events (SSE).
+
+Think of it as "Stripe for inbound email" — a managed service that handles all the complexity of receiving emails, so you can focus on what to *do* with them.
+
+Key features:
+- **Instant email addresses** — get addresses like `anything@yourname.mailhooks.email` with zero configuration
+- **Real-time delivery** — receive emails via webhooks or SSE push notifications
+- **No infrastructure** — no mail servers, no exposed ports, no DNS headaches
+- **Full email parsing** — HTML, plain text, attachments, headers — all parsed and ready to use
+
 ## The Problem: Clawdbot Can't Receive Inbound Email
 
 Clawdbot runs as a daemon on your server. It can make outbound requests all day long — calling APIs, searching the web, sending messages. But it can't *receive* incoming connections the way a mail server can.
