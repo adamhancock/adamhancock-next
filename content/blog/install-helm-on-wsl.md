@@ -1,6 +1,7 @@
 ---
 title: Install Helm on WSL
-date: '2026-01-29'
+date: '2020-01-21'
+updated: '2026-01-29'
 tags:
   - Kubernetes
 excerpt: >-

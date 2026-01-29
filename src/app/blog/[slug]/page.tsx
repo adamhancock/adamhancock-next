@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
       url: "https://adamhancock.co.uk",
     },
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated || post.date,
     url: `https://adamhancock.co.uk/blog/${slug}`,
     keywords: post.tags.join(", "),
     publisher: {
@@ -99,6 +99,12 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="text-4xl font-bold tracking-tight">{post.title}</h1>
           <div className="flex items-center gap-2 text-muted-foreground">
             <span>{post.date}</span>
+            {post.updated && (
+              <>
+                <span>·</span>
+                <span>Updated {post.updated}</span>
+              </>
+            )}
             <span>·</span>
             <span>{post.readingTime}</span>
           </div>

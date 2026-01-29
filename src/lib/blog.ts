@@ -10,6 +10,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  updated?: string;
   excerpt: string;
   tags: string[];
   content: string;
@@ -48,6 +49,11 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
           month: "long",
           year: "numeric",
         }) : "",
+        updated: data.updated ? new Date(data.updated).toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        }) : undefined,
         excerpt: data.excerpt || content.slice(0, 160) + "...",
         tags: data.tags || [],
         content,
@@ -111,6 +117,11 @@ export async function getBlogPostWithMDX(slug: string): Promise<BlogPostWithMDX 
       month: "long",
       year: "numeric",
     }) : "",
+    updated: data.updated ? new Date(data.updated).toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }) : undefined,
     excerpt: data.excerpt || rawContent.slice(0, 160) + "...",
     tags: data.tags || [],
     content,
