@@ -17,8 +17,10 @@ export default {
       });
       
       // Forward the real client IP to OpenPanel for geolocation
+      // Use openpanel-client-ip as it's the first header OpenPanel checks
       const clientIP = request.headers.get('CF-Connecting-IP');
       if (clientIP) {
+        proxyRequest.headers.set('openpanel-client-ip', clientIP);
         proxyRequest.headers.set('X-Forwarded-For', clientIP);
         proxyRequest.headers.set('X-Real-IP', clientIP);
       }
