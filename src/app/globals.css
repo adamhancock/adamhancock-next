@@ -245,8 +245,14 @@
   @apply text-lg font-semibold mt-8 mb-3;
 }
 
-.prose ul, .prose ol {
+.prose ul {
   @apply my-6 pl-6 space-y-2;
+  list-style-type: disc !important;
+}
+
+.prose ol {
+  @apply my-6 pl-6 space-y-2;
+  list-style-type: decimal !important;
 }
 
 .prose li {
