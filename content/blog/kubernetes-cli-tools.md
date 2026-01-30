@@ -1,7 +1,7 @@
 ---
 title: Kubernetes CLI Tools
 date: '2020-05-04'
-updated: '2025-01-30'
+updated: '2026-01-30'
 tags:
   - Kubernetes
 excerpt: My recommended Kubernetes command line toolset
