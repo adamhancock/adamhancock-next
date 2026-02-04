@@ -35,6 +35,15 @@ export default {
       return newResponse;
     }
     
+    // Redirects
+    const redirects: Record<string, string> = {
+      '/blog/clawdbot-mailhooks-integration': '/blog/openclaw-mailhooks-integration',
+    };
+    
+    if (redirects[url.pathname]) {
+      return Response.redirect(new URL(redirects[url.pathname], url.origin).toString(), 301);
+    }
+    
     // Serve static assets for everything else
     return env.ASSETS.fetch(request);
   },
