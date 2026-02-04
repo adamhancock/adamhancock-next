@@ -1,13 +1,13 @@
 ---
-title: "How to Add Email Notifications to Clawdbot (The Easy Way)"
+title: "How to Add Email Notifications to OpenClaw (The Easy Way)"
 date: "2026-01-27"
-tags: ["Clawdbot", "AI", "Automation"]
-excerpt: "Clawdbot can check your calendar, control your smart home, and search the web — but it can't receive emails. Here's how to fix that with Mailhooks."
+tags: ["OpenClaw", "AI", "Automation"]
+excerpt: "OpenClaw can check your calendar, control your smart home, and search the web — but it can't receive emails. Here's how to fix that with Mailhooks."
 ---
 
-[Clawdbot](https://github.com/clawdbot/clawdbot) is quickly becoming one of the most powerful personal AI assistants you can self-host. It can check your calendar, control your smart home, manage your to-do list, and even browse the web autonomously.
+[OpenClaw](https://github.com/openclaw/openclaw) is quickly becoming one of the most powerful personal AI assistants you can self-host. It can check your calendar, control your smart home, manage your to-do list, and even browse the web autonomously.
 
-But there's one thing Clawdbot can't do out of the box: **receive emails**.
+But there's one thing OpenClaw can't do out of the box: **receive emails**.
 
 Sure, you can have it *read* your Gmail inbox using the `gog` CLI. But that requires polling — constantly checking "any new emails?" — which burns API calls and adds latency. What if you want your AI assistant to be **notified instantly** when an important email arrives?
 
@@ -23,11 +23,11 @@ Key features:
 - **No infrastructure** — no mail servers, no exposed ports, no DNS headaches
 - **Full email parsing** — HTML, plain text, attachments, headers — all parsed and ready to use
 
-## The Problem: Clawdbot Can't Receive Inbound Email
+## The Problem: OpenClaw Can't Receive Inbound Email
 
-Clawdbot runs as a daemon on your server. It can make outbound requests all day long — calling APIs, searching the web, sending messages. But it can't *receive* incoming connections the way a mail server can.
+OpenClaw runs as a daemon on your server. It can make outbound requests all day long — calling APIs, searching the web, sending messages. But it can't *receive* incoming connections the way a mail server can.
 
-To get email notifications into Clawdbot, you'd traditionally need to:
+To get email notifications into OpenClaw, you'd traditionally need to:
 
 - **Run your own mail server** — SMTP, MX records, spam filtering, the works
 - **Set up a webhook endpoint** — expose a public URL, handle authentication, deal with retries
@@ -39,9 +39,9 @@ None of these are great options for a personal AI assistant that should "just wo
 
 [Mailhooks](https://mailhooks.dev) takes a different approach. Instead of webhooks (which require you to expose a server), it offers **Server-Sent Events (SSE)** — a persistent outbound connection that receives emails in real-time.
 
-Here's why this is perfect for Clawdbot:
+Here's why this is perfect for OpenClaw:
 
-- **No exposed ports** — Clawdbot connects *out* to Mailhooks, not the other way around
+- **No exposed ports** — OpenClaw connects *out* to Mailhooks, not the other way around
 - **Instant delivery** — emails arrive in seconds, not minutes
 - **No polling** — one persistent connection, zero wasted API calls
 - **Simple setup** — get an email address like `anything@yourname.mailhooks.email` in 2 minutes
@@ -52,7 +52,7 @@ Here's why this is perfect for Clawdbot:
 
 Sign up at [mailhooks.dev](https://mailhooks.dev) — the free tier includes 100 emails/month, which is plenty for personal use.
 
-You'll get a domain like `clawdbot.mailhooks.email` where you can receive emails at any address.
+You'll get a domain like `openclaw.mailhooks.email` where you can receive emails at any address.
 
 ### 2. Install the SDK
 
@@ -110,7 +110,7 @@ The fix: sanitize and clearly delimit email data before presenting it to the AI.
 
 ## The Result
 
-With this setup, my Clawdbot now:
+With this setup, my OpenClaw now:
 
 - Receives emails in real-time (under 10 second latency)
 - Notifies me on WhatsApp when something important arrives
@@ -124,12 +124,12 @@ All without running a mail server, exposing any ports, or burning Gmail API quot
 1. Sign up at [mailhooks.dev](https://mailhooks.dev) (free tier available)
 2. Get your API key and email domain
 3. Drop in the SSE listener script
-4. Start receiving emails in Clawdbot
+4. Start receiving emails in OpenClaw
 
 The whole setup takes about 5 minutes. Your AI assistant will thank you.
 
 ---
 
-*Clawdbot is open source: [github.com/clawdbot/clawdbot](https://github.com/clawdbot/clawdbot)*
+*OpenClaw is open source: [github.com/openclaw/openclaw](https://github.com/openclaw/openclaw)*
 
 *Mailhooks: [mailhooks.dev](https://mailhooks.dev)*
