@@ -43,31 +43,38 @@ This is where most guides stop. "Just send an email!" they say. But *how* you se
 
 Most people think you need a mail server to send email. You don't. You can connect directly to Mailhooks' MX servers and deliver the email yourself — no authentication, no SMTP relay, no SendGrid account.
 
-Here's a Python script that does exactly that:
+Here's a TypeScript script that does exactly that:
 
-```python
-import smtplib
-from email.mime.text import MIMEText
-from email.utils import formatdate
+```typescript
+import { createTransport } from "nodemailer"
 
-def send_alert(subject, body, to_address):
-    """Send an email directly to Mailhooks via SMTP — no auth needed."""
-    msg = MIMEText(body)
-    msg["From"] = "alerts@your-server.local"
-    msg["To"] = to_address
-    msg["Subject"] = subject
-    msg["Date"] = formatdate(localtime=True)
+async function sendAlert(
+  subject: string,
+  body: string,
+  toAddress: string,
+) {
+  // Connect directly to Mailhooks' MX server.
+  // No authentication required for direct delivery.
+  const transporter = createTransport({
+    host: "inbound.mailhooks.dev",
+    port: 25,
+    secure: false,
+    tls: { rejectUnauthorized: false },
+  })
 
-    # Connect directly to Mailhooks' MX server
-    # No authentication required for direct delivery
-    with smtplib.SMTP("mx.mailhooks.email", 25) as smtp:
-        smtp.send_message(msg)
+  await transporter.sendMail({
+    from: "alerts@your-server.local",
+    to: toAddress,
+    subject,
+    text: body,
+  })
+}
 
-# Usage
-send_alert(
-    subject="🚨 Server CPU at 95%",
-    body="prod-web-01 CPU usage has exceeded 95% for 5 minutes.",
-    to_address="alerts@yourname.mailhooks.email"
+// Usage
+await sendAlert(
+  "🚨 Server CPU at 95%",
+  "prod-web-01 CPU usage has exceeded 95% for 5 minutes.",
+  "alerts@yourname.mailhooks.email",
 )
 ```
 
@@ -93,33 +100,45 @@ echo "Server disk at 90%" | mail \
   alerts@yourname.mailhooks.email
 ```
 
-Or with Python and a relay:
+Or with TypeScript and a relay:
 
-```python
-import smtplib
-from email.mime.text import MIMEText
+```typescript
+import { createTransport } from "nodemailer"
 
-def send_via_relay(subject, body, to_address, smtp_host, smtp_port, user, password):
-    msg = MIMEText(body)
-    msg["From"] = user
-    msg["To"] = to_address
-    msg["Subject"] = subject
+async function sendViaRelay(opts: {
+  subject: string
+  body: string
+  toAddress: string
+  smtpHost: string
+  smtpPort: number
+  user: string
+  password: string
+}) {
+  const transporter = createTransport({
+    host: opts.smtpHost,
+    port: opts.smtpPort,
+    secure: false, // use STARTTLS on the connection
+    auth: { user: opts.user, pass: opts.password },
+  })
 
-    with smtplib.SMTP(smtp_host, smtp_port) as smtp:
-        smtp.starttls()
-        smtp.login(user, password)
-        smtp.send_message(msg)
+  await transporter.sendMail({
+    from: opts.user,
+    to: opts.toAddress,
+    subject: opts.subject,
+    text: opts.body,
+  })
+}
 
-# Example: using Gmail
-send_via_relay(
-    subject="Build Failed",
-    body="Pipeline #42 failed at step 3.",
-    to_address="alerts@yourname.mailhooks.email",
-    smtp_host="smtp.gmail.com",
-    smtp_port=587,
-    user="you@gmail.com",
-    password="your-app-password"
-)
+// Example: using Gmail
+await sendViaRelay({
+  subject: "Build Failed",
+  body: "Pipeline #42 failed at step 3.",
+  toAddress: "alerts@yourname.mailhooks.email",
+  smtpHost: "smtp.gmail.com",
+  smtpPort: 587,
+  user: "you@gmail.com",
+  password: "your-app-password",
+})
 ```
 
 This works everywhere — no port 25 restrictions to worry about.
