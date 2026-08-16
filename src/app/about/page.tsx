@@ -7,6 +7,9 @@ import { Github, Linkedin, Mail, MapPin, Building2, Calendar } from "lucide-reac
 export const metadata = {
   title: "About",
   description: "Founding Engineer with a passion for DevOps, Cloud Computing and Automation.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const techStack = [

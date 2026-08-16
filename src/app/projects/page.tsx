@@ -6,6 +6,9 @@ import { ExternalLink, Github } from "lucide-react";
 export const metadata = {
   title: "Projects | Adam Hancock",
   description: "Open source projects and side projects by Adam Hancock.",
+  alternates: {
+    canonical: "/projects",
+  },
 };
 
 const projects = [

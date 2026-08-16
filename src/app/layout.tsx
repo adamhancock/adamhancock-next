@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Adam Hancock", url: "https://adamhancock.co.uk" }],
   creator: "Adam Hancock",
   metadataBase: new URL("https://adamhancock.co.uk"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_GB",

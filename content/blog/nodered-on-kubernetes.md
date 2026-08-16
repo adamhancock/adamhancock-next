@@ -25,4 +25,4 @@ Update ingress.yml and replace yourdomain.tld with your domain. Change into the 
 kubectl apply -f .
 ```
 
-Point your [y](https://blog.adamhancock.co.uk/nodered-on-kubernetes/yourdomain.tld)ourdomain.tld DNS at your ingress controller and your Node-RED should will be available. 
+Point your `yourdomain.tld` DNS at your ingress controller and your Node-RED should will be available. 
