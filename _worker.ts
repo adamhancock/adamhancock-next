@@ -35,9 +35,44 @@ export default {
       return newResponse;
     }
     
-    // Redirects
+    // Redirects — old Ghost-era URLs (blog.adamhancock.co.uk/<slug>/) now 404
+    // once the subdomain redirect lands on apex, so map them to /blog/<slug>.
     const redirects: Record<string, string> = {
       '/blog/clawdbot-mailhooks-integration': '/blog/openclaw-mailhooks-integration',
+      '/backing-up-mysql-to-azure': '/blog/backing-up-mysql-to-azure',
+      '/backing-up-mysql-to-azure/': '/blog/backing-up-mysql-to-azure',
+      '/deploying-unifi-on-kubernetes': '/blog/deploying-unifi-on-kubernetes',
+      '/deploying-unifi-on-kubernetes/': '/blog/deploying-unifi-on-kubernetes',
+      '/devctl-multi-worktree-development': '/blog/devctl-multi-worktree-development',
+      '/devctl-multi-worktree-development/': '/blog/devctl-multi-worktree-development',
+      '/email-alerts-to-webhooks-mailhooks': '/blog/email-alerts-to-webhooks-mailhooks',
+      '/email-alerts-to-webhooks-mailhooks/': '/blog/email-alerts-to-webhooks-mailhooks',
+      '/email-to-notion-mailhooks': '/blog/email-to-notion-mailhooks',
+      '/email-to-notion-mailhooks/': '/blog/email-to-notion-mailhooks',
+      '/ghost-on-kubernetes': '/blog/ghost-on-kubernetes',
+      '/ghost-on-kubernetes/': '/blog/ghost-on-kubernetes',
+      '/how-to-install-prometheus-and-alertmanager': '/blog/how-to-install-prometheus-and-alertmanager',
+      '/how-to-install-prometheus-and-alertmanager/': '/blog/how-to-install-prometheus-and-alertmanager',
+      '/imagepull-secrets-with-kubernetes': '/blog/imagepull-secrets-with-kubernetes',
+      '/imagepull-secrets-with-kubernetes/': '/blog/imagepull-secrets-with-kubernetes',
+      '/install-helm-on-wsl': '/blog/install-helm-on-wsl',
+      '/install-helm-on-wsl/': '/blog/install-helm-on-wsl',
+      '/k3s-on-digitalocean': '/blog/k3s-on-digitalocean',
+      '/k3s-on-digitalocean/': '/blog/k3s-on-digitalocean',
+      '/kubernetes-cli-tools': '/blog/kubernetes-cli-tools',
+      '/kubernetes-cli-tools/': '/blog/kubernetes-cli-tools',
+      '/kubernetes-with-raspberry-pis': '/blog/kubernetes-with-raspberry-pis',
+      '/kubernetes-with-raspberry-pis/': '/blog/kubernetes-with-raspberry-pis',
+      '/monitoring-kubernetes-with-statuscake': '/blog/monitoring-kubernetes-with-statuscake',
+      '/monitoring-kubernetes-with-statuscake/': '/blog/monitoring-kubernetes-with-statuscake',
+      '/nodered-on-kubernetes': '/blog/nodered-on-kubernetes',
+      '/nodered-on-kubernetes/': '/blog/nodered-on-kubernetes',
+      '/openclaw-mailhooks-integration': '/blog/openclaw-mailhooks-integration',
+      '/openclaw-mailhooks-integration/': '/blog/openclaw-mailhooks-integration',
+      '/portx': '/blog/portx',
+      '/portx/': '/blog/portx',
+      '/setting-up-fluxcd-on-wsl': '/blog/setting-up-fluxcd-on-wsl',
+      '/setting-up-fluxcd-on-wsl/': '/blog/setting-up-fluxcd-on-wsl',
     };
     
     if (redirects[url.pathname]) {

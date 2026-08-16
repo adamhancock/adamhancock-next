@@ -6,6 +6,9 @@ import { getBlogPosts } from "@/lib/blog";
 export const metadata = {
   title: "Blog | Adam Hancock",
   description: "Articles about DevOps, Kubernetes, Cloud Computing and more.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default async function BlogPage() {
