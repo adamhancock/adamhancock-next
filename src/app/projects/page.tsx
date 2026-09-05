@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 
 export const metadata = {
-  title: "Projects | Adam Hancock",
+  title: "Projects",
   description: "Open source projects and side projects by Adam Hancock.",
   alternates: {
     canonical: "/projects",

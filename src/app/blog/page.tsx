@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { getBlogPosts } from "@/lib/blog";
 
 export const metadata = {
-  title: "Blog | Adam Hancock",
+  title: "Blog",
   description: "Articles about DevOps, Kubernetes, Cloud Computing and more.",
   alternates: {
     canonical: "/blog",

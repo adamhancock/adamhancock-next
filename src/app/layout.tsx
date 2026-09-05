@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { OpenPanelComponent } from "@openpanel/nextjs";
-import { CrispChat } from "@/components/crisp-chat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,12 +85,6 @@ export default function RootLayout({
         <main className="container px-4 md:px-8 py-4 md:py-8 pb-8 md:pb-24">
           {children}
         </main>
-        {process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID && (
-          <CrispChat
-            websiteId={process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID}
-            colorMode="auto"
-          />
-        )}
       </body>
     </html>
   );
