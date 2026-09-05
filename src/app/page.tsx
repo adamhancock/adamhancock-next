@@ -42,8 +42,16 @@ export default async function Home() {
 
           <BlurFade delay={0.3}>
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Founding Engineer crafting the future of cyber assurance. 
-              Writing about DevOps, Kubernetes, and AI.
+              Founding engineer at Assurix, building AI-assisted compliance
+              software for MSPs. I also make{" "}
+              <a
+                href="https://mailhooks.dev"
+                className="font-medium text-foreground underline decoration-muted-foreground/50 underline-offset-4 hover:decoration-foreground"
+              >
+                Mailhooks
+              </a>
+              , email to webhooks without a mail server. I write about DevOps,
+              Kubernetes and AI.
             </p>
           </BlurFade>
 

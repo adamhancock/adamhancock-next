@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail, MapPin, Building2, Calendar } from "lucide-reac
 
 export const metadata = {
   title: "About",
-  description: "Founding Engineer with a passion for DevOps, Cloud Computing and Automation.",
+  description: "Founding engineer at Assurix. Building AI-assisted compliance software for MSPs and Mailhooks on the side.",
   alternates: {
     canonical: "/about",
   },
@@ -58,7 +58,8 @@ export default function AboutPage() {
           <div className="flex-1 space-y-4">
             <h1 className="text-4xl font-bold tracking-tight">Hey, I'm Adam 👋</h1>
             <p className="text-xl text-muted-foreground">
-              Founding Engineer building the future of cyber assurance at Assurix.
+              Founding engineer at Assurix, building AI-assisted compliance
+              software for MSPs.
             </p>
             <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
@@ -76,17 +77,19 @@ export default function AboutPage() {
       <BlurFade delay={0.2}>
         <div className="space-y-4 text-lg leading-relaxed">
           <p>
-            I build products. Scalable infrastructure, AI, and great developer 
-            experience — that's what I care about.
+            Founding engineer at Assurix. I own the platform end to end: API,
+            frontend, cloud infrastructure, and the AI that reviews compliance
+            evidence. Assurix helps MSPs prove they are secure, mature and
+            resilient.
           </p>
           <p>
-            By day, I'm architecting cloud-native platforms and automating everything 
-            that moves. By night, you'll find me tinkering with home automation, 
-            building AI assistants, or writing about what I've learned.
+            Outside work I build Mailhooks, an email to webhook API, and
+            OpenClaw, a self-hosted AI assistant. I write about what I build,
+            mostly DevOps and Kubernetes.
           </p>
           <p>
-            I write about Kubernetes, DevOps, and the tools I use to automate my life. 
-            Most of my work is open source — feel free to poke around my GitHub.
+            A lot of it is open source. GitHub is the best place to see what
+            I'm up to.
           </p>
         </div>
       </BlurFade>
@@ -157,8 +160,9 @@ export default function AboutPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">📖 Open Source</h3>
                 <p className="text-sm text-muted-foreground">
-                  I try to give back to the community that taught me so much. Most of my 
-                  side projects are open source.
+                  OpenClaw and most of my other side projects are open source.
+                  I've learned a lot from other people's code and try to pay it
+                  forward.
                 </p>
               </CardContent>
             </Card>
@@ -180,8 +184,8 @@ export default function AboutPage() {
         <div className="space-y-6">
           <h2 className="text-2xl font-bold tracking-tight">Get in Touch</h2>
           <p className="text-muted-foreground">
-            Want to chat about DevOps, Kubernetes, or collaborate on something? 
-            I'm always happy to connect.
+            Questions, hiring, or building something with email and webhooks?
+            My inbox is open.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild>
