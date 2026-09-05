@@ -5,7 +5,7 @@ import { ExternalLink, Github } from "lucide-react";
 
 export const metadata = {
   title: "Projects",
-  description: "Things Adam Hancock is building: Mailhooks, OpenClaw and more.",
+  description: "Things Adam Hancock is building: Mailhooks and more.",
   alternates: {
     canonical: "/projects",
   },
@@ -19,11 +19,11 @@ const projects = [
     link: "https://mailhooks.dev",
   },
   {
-    title: "OpenClaw",
-    description: "Self-hosted AI assistant. Control your smart home, manage your calendar, browse the web and automate the rest. Formerly Clawdbot.",
-    tags: ["TypeScript", "AI", "Automation"],
-    github: "https://github.com/openclaw/openclaw",
-    link: "https://clawd.bot",
+    title: "Hermes",
+    description: "Open source AI agent by Nous Research. I run my smart home, this site and a fleet of automation agents on Hermes.",
+    tags: ["AI", "Agents", "Automation"],
+    github: "https://github.com/NousResearch/hermes-agent",
+    link: "https://hermes-agent.nousresearch.com",
   },
 ];
 

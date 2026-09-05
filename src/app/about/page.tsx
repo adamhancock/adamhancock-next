@@ -83,9 +83,9 @@ export default function AboutPage() {
             resilient.
           </p>
           <p>
-            Outside work I build Mailhooks, an email to webhook API, and
-            OpenClaw, a self-hosted AI assistant. I write about what I build,
-            mostly DevOps and Kubernetes.
+            Outside work I build Mailhooks, an email to webhook API. My smart
+            home and this site run on Hermes agents. I write about what I
+            build, mostly DevOps and Kubernetes.
           </p>
           <p>
             A lot of it is open source. GitHub is the best place to see what
@@ -160,9 +160,9 @@ export default function AboutPage() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2">📖 Open Source</h3>
                 <p className="text-sm text-muted-foreground">
-                  OpenClaw and most of my other side projects are open source.
-                  I've learned a lot from other people's code and try to pay it
-                  forward.
+                  Most of my side projects are open source, and so is the
+                  agent platform I run on. I've learned a lot from other
+                  people's code and try to pay it forward.
                 </p>
               </CardContent>
             </Card>
