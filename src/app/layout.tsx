@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     default: "Adam Hancock | Founding Engineer",
     template: "%s | Adam Hancock",
   },
-  description: "Developer with a passion for DevOps, Cloud Computing and Automation. Building scalable infrastructure and empowering teams to ship faster.",
-  keywords: ["DevOps", "Kubernetes", "Cloud Computing", "Platform Engineering", "TypeScript", "Infrastructure"],
+  description: "Founding engineer at Assurix, building AI-assisted compliance software for MSPs. Maker of Mailhooks, email to webhooks without a mail server.",
+  keywords: ["DevOps", "Kubernetes", "Cloud Computing", "Platform Engineering", "TypeScript", "Infrastructure", "Mailhooks"],
   authors: [{ name: "Adam Hancock", url: "https://adamhancock.co.uk" }],
   creator: "Adam Hancock",
   metadataBase: new URL("https://adamhancock.co.uk"),
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: "https://adamhancock.co.uk",
     siteName: "Adam Hancock",
     title: "Adam Hancock | Founding Engineer",
-    description: "Developer with a passion for DevOps, Cloud Computing and Automation.",
+    description: "Founding engineer at Assurix. Building Mailhooks and writing about DevOps, Kubernetes and AI.",
     images: [
       {
         url: "/og-image.png",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Adam Hancock | Founding Engineer",
-    description: "Developer with a passion for DevOps, Cloud Computing and Automation.",
+    description: "Founding engineer at Assurix. Building Mailhooks and writing about DevOps, Kubernetes and AI.",
     creator: "@adamhancock",
     images: ["/og-image.png"],
   },

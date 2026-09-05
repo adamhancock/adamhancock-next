@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# adamhancock.co.uk
 
-## Getting Started
+Personal site and blog for Adam Hancock.
 
-First, run the development server:
+Next.js 16 static export, served from Cloudflare. Pushing to `main` builds and deploys automatically, nothing to run locally.
+
+## Stack
+
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS v4, shadcn-style components in `src/components/ui`
+- Blog content in `content/blog` as Markdown, rendered with `next-mdx-remote` and Shiki code highlighting
+- OpenPanel analytics, proxied through the `/ingest` route in `_worker.ts`
+
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Blog posts live in `content/blog/<slug>.md`. The slug comes from the filename.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Frontmatter:
 
-## Learn More
+```yaml
+---
+title: Post title
+date: "2026-01-30"        # YYYY-MM-DD
+tags: ["Kubernetes", "DevOps"]
+excerpt: One or two sentences for listings and SEO.
+updated: "2026-02-01"      # optional
+---
+```
 
-To learn more about Next.js, take a look at the following resources:
+Posts sort by date descending. The three most recent appear on the homepage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build   # static export to out/
+```
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Automatic. Merging to `main` triggers a Cloudflare build that serves `./out`. `_worker.ts` handles the OpenPanel ingest proxy and 301 redirects (old Ghost-era URLs, the Clawdbot to OpenClaw rename).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Wrangler is not needed for deploys.

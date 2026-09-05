@@ -5,7 +5,7 @@ import { ExternalLink, Github } from "lucide-react";
 
 export const metadata = {
   title: "Projects",
-  description: "Open source projects and side projects by Adam Hancock.",
+  description: "Things Adam Hancock is building: Mailhooks, OpenClaw and more.",
   alternates: {
     canonical: "/projects",
   },
@@ -13,19 +13,18 @@ export const metadata = {
 
 const projects = [
   {
-    title: "Clawdbot",
-    description: "A powerful personal AI assistant you can self-host. Control your smart home, manage calendars, browse the web, and more.",
-    tags: ["TypeScript", "AI", "Automation"],
-    github: "https://github.com/clawdbot/clawdbot",
-    link: "https://clawd.bot",
-  },
-  {
     title: "Mailhooks",
-    description: "Real-time email notifications via Server-Sent Events. No webhooks, no exposed ports.",
-    tags: ["TypeScript", "Email", "SSE"],
+    description: "Email to webhooks without a mail server. Give it an email address and it sends an HTTP POST to your endpoint when mail arrives. No DNS, no MIME parsing, no infrastructure to run.",
+    tags: ["Email", "Webhooks", "API"],
     link: "https://mailhooks.dev",
   },
-  // Add more projects here
+  {
+    title: "OpenClaw",
+    description: "Self-hosted AI assistant. Control your smart home, manage your calendar, browse the web and automate the rest. Formerly Clawdbot.",
+    tags: ["TypeScript", "AI", "Automation"],
+    github: "https://github.com/openclaw/openclaw",
+    link: "https://clawd.bot",
+  },
 ];
 
 export default function ProjectsPage() {
@@ -34,7 +33,7 @@ export default function ProjectsPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Projects</h1>
         <p className="text-muted-foreground">
-          Open source projects and things I'm building.
+          Things I'm building. Some of it is open source.
         </p>
       </div>
 
